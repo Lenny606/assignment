@@ -13,14 +13,14 @@
 
 <form action="{{route("register")}}" method="post">
         @csrf
-        <label for="name">Name</label>
-        <input type="text" name="name"><br> 
-        <label for="email">Email</label>
-        <input type="email" name="email"><br> 
-        <label for="password">Password</label>
+        <label for="name">Name: </label><br> 
+        <input type="text" name="name"><br>
+        <label for="email">Email: </label><br> 
+        <input type="email" name="email"><br>
+        <label for="password">Password: </label><br> 
         <input type="password" name="password"><br>
-        <label for="password">Password Confirm</label>
-        <input type="password_confirm" name="password_confirm"><br> 
+        <label for="password">Password Confirm:</label><br> 
+        <input type="password_confirm" name="password_confirm"><br> <br>
         <input type="submit" value="Create User">
 </form>
     {{-- <button onclick="getUsers()" id="btn">BTN</button> --}}

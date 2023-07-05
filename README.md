@@ -10,4 +10,6 @@ Migrations
 Seeders
 
 Package Fortify
-new User , validates input
+pro založení/registraci nového uživatele
+základní validační metody pro každý input
+hash passwordu

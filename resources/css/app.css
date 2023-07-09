@@ -1,0 +1,38 @@
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+body {
+    margin: 0 20%;
+    background-color: rgb(168, 161, 161);
+    text-align: center;
+}
+
+nav {
+    background-color: gray;
+    color: #fff;
+    padding: 5px;
+}
+
+a {
+    margin: 5px;
+}
+
+h1,
+p,
+label,
+input {
+    color: darkred;
+}
+
+form {
+    border: 2px solid lightgrey;
+    padding: 5px;
+    margin: 0 20%;
+}
+
+input {
+    background-color: lightgrey;
+    border-color: lightgrey;
+}

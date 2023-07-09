@@ -13,3 +13,15 @@ Package Fortify
 pro založení/registraci nového uživatele
 základní validační metody pro každý input
 hash passwordu
+
+## API BackEnd
+
+\Controllers\Api\UsersController
+obsahuje endpointy, které vrací požadované data z databáze
+[Odkaz na soubor](app\Http\Controllers\Api\UsersController.php)
+
+## FrontEnd
+
+pouze základ v html bez stylesheetu
+views používají principy MVC
+Založení uživatele přes form , login

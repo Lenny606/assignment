@@ -16,7 +16,7 @@
         // 'current_page' => $current_page ?? null
     ])
 
-{{-- asunc js function only for testing purposes in console--}}
+{{-- async js function only for testing purposes in console--}}
 <script>
     const getUsers = async () => {
     const response = await fetch("/api/v1/users");

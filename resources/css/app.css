@@ -26,7 +26,7 @@ input {
     color: darkred;
 }
 
-form {
+.form {
     border: 2px solid lightgrey;
     padding: 5px;
     margin: 0 20%;

@@ -6,7 +6,7 @@
     <h1>HEADLINE</h1>
     <p>Hello from Login page</p>
 
-<form action="{{route("login")}}" method="post">
+<form class="form" action="{{route("login")}}" method="post">
         @csrf
         
         <label for="email">Email: </label><br> 

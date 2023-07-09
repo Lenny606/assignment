@@ -8,7 +8,7 @@
     <p>Hello from Register page</p>
 
 
-<form action="{{route("register")}}" method="post">
+<form  class="form" action="{{route("register")}}" method="post">
         @csrf
         <label for="name">Name: </label><br> 
         <input type="text" name="name"><br>

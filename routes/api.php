@@ -21,8 +21,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
-
 //      /v1/api/users
 //      returns all users from dtbase
 Route::get("/v1/users", [UsersController::class, 'getUsers']);

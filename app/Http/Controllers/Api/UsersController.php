@@ -88,9 +88,9 @@ class UsersController extends Controller
 
           if ($result)
             {
-                return "user updated successfully";
+                return response()->json(["result" => "user updated successfully", "users" => $users ], 204);
             } else {
-                return "update user failed";
+                return response()->json(["result" => "update user failed"], 204);
             };
             
     }
@@ -120,7 +120,7 @@ class UsersController extends Controller
 
         } else {
 
-            return response()->json(["result" => "no user has benn found"], 404);
+            return response()->json(["result" => "no user has been found"], 404);
         }
 
     }

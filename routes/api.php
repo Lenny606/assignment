@@ -32,8 +32,3 @@ Route::get("/v1/users/{name}/search", [UsersController::class, 'searchUserByName
 Route::post("/v1/users/add", [UsersController::class, 'addUsers']);
 Route::put("/v1/users/{id}/update", [UsersController::class, 'updateUsersById']);
 Route::delete("/v1/users/{id}/delete", [UsersController::class, 'deleteUsersById']);
-
-//      /api/users/{id}/delete
-//      deletes user by his id from dtbase
-//Route::post("/v1/users/{id}/delete", [UsersController::class, 'deleteUsers']);
-

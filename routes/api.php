@@ -21,20 +21,19 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//      /v1/api/users
-//      returns all users from dtbase
+Route::post('/register', [RegisteredUserController::class, 'store'])
+            ->middleware(['guest:'.config('fortify.guard')]);
+
+
+//-------- /v1/api/users ---------------
 Route::get("/v1/users", [UsersController::class, 'getUsers']);
 Route::get("/v1/users/{id}", [UsersController::class, 'getUsersById']);
 Route::get("/v1/users/{name}/search", [UsersController::class, 'searchUserByName']);
 Route::post("/v1/users/add", [UsersController::class, 'addUsers']);
 Route::put("/v1/users/{id}/update", [UsersController::class, 'updateUsersById']);
-Route::post("/v1/users/{id}/delete", [UsersController::class, 'deleteUsersById']);
+Route::delete("/v1/users/{id}/delete", [UsersController::class, 'deleteUsersById']);
 
 //      /api/users/{id}/delete
 //      deletes user by his id from dtbase
-Route::post("/v1/users/{id}/delete", [UsersController::class, 'deleteUsers']);
+//Route::post("/v1/users/{id}/delete", [UsersController::class, 'deleteUsers']);
 
-
-
-Route::post('/register', [RegisteredUserController::class, 'store'])
-            ->middleware(['guest:'.config('fortify.guard')]);

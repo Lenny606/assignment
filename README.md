@@ -38,3 +38,9 @@ Pro API jsem si vystačil bez použití nějakého balíčku, i když jsem uvaž
 dokumentaci jsem se tvořil na základě Swagger vzoru v editoru yaml formátu, poté převedeno do json\
 [Open API Documentation](openapi.json)
 ![Open API Documentation](images/swagger.png)
+
+## Docker
+
+S Dockerem bohužel praktické zkušenosti nemám, doposud jsem s ním v práci nepřišel do kontaktu.\
+Nicméně vím, že je to důležitý skill a mám ho zařazen v mém backlogu na learning :smile:
+Již jsem zkoušel containerizaci na malé javascriptí appce , např [zde](https://github.com/Lenny606/dockerlesson), ale doposud nic většího, tudíž sem se do tohoto tasku nepouštěl.

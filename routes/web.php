@@ -25,8 +25,3 @@ Route::get('/users', [UsersController::class, "index"]);
 Route::get('/delete/{id}', [UsersController::class, "delete"]);
 Route::get('/details/{id}', [UsersController::class, "details"]);
 Route::put("/update", [UsersController::class, "update"]);
-
-//protected route
-// Route::get('/home', function () {
-//     return view('index/index');
-// })->middleware('auth');

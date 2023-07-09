@@ -14,10 +14,10 @@ Rozhodl jsem se také udělat pro ukázku dvě řešení, kdy práce s daty v r�
 
 ## DTB
 
-pro rychlou přípravu DTB použity ,,helpers,, v rámci Laravelu -> php artisan
-Migrations
-Seeders
-[dump file](app/assignment.sql)
+pro rychlou přípravu DTB použity ,,helpers,, v rámci Laravelu -> php artisan\
+Migrations\
+Seeders\
+[dump file zde:](assignment.sql)
 
 ## Packages
 
@@ -25,13 +25,13 @@ Laravel už sam o sobě obsahuje množství balíčků, které usnaďnují stand
 
 ### Fortify
 
-pro snadné založení/registraci nového uživatele
-obsahuje základní validační metody pro každý input a hash passwordu
+pro snadné založení/registraci nového uživatele\
+obsahuje základní validační metody pro každý input a hash passwordu\
 
-Sanctum pro authentifikaci, ale prakticky jsem ho ani nepoužil
+Sanctum pro authentifikaci, ale prakticky jsem ho ani nepoužil\
 Pro API jsem si vystačil bez použití nějakého balíčku, i když jsem uvažoval např. o Restify, ale to bych musel vzít více času nastudovat dokumentaci
 
 ## API
 
-[Odkaz na soubor](app/Http/Controllers/Api/CreateUserController.php)
+[Controller](app/Http/Controllers/Api/UsersController.php)\
 obsahuje endpointy, které vrací požadované data z databáze

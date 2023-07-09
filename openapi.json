@@ -1,0 +1,309 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger User Form - OpenAPI 3.0",
+    "description": "A simple api endpoint which can be used for manipulating with users data in dtbase. \n\n Link to github:\n\n- [User app - link to repository](https://github.com/Lenny606/assignment)\n- [The source API definition](https://github.com/Lenny606/assignment/blob/main/openapi.json)",
+    "termsOfService": "",
+    "contact": {
+      "email": "thomas.kravcik@gmail.com"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.11"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://www.assignment.test/api/v1"
+    }
+  ],
+  "tags": [
+    {
+      "name": "users",
+      "description": "operations with Users table in dtbase (CRUD)",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://swagger.io"
+      }
+    }
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Get all users from database",
+        "description": "Get all users from the Users table with their id, name, email.",
+        "operationId": "getUsers",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GetUsers"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No users in database"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Gets one user from database",
+        "description": "Gets one user from database according to his id.",
+        "operationId": "getUsersId",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/GetUsers"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No users in database"
+          }
+        }
+      }
+    },
+    "/users/add": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Adds a new user into database.",
+        "description": "Creates a new user and saves him into the database. Id, name, email and password has to be provided.",
+        "operationId": "addUsers",
+        "requestBody": {
+          "description": "Body of the request should contain json format with payload.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddUser"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/AddUser"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid tag value"
+          }
+        }
+      }
+    },
+    "/users/{id}/update": {
+      "put": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Updates user by his Id",
+        "description": "Find the user by his Id and update his name and email",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserById"
+              }
+            }
+          }
+        },
+        "operationId": "updateUserById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUsers"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
+    "/users/{id}/delete": {
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Deletes user by his Id",
+        "description": "",
+        "operationId": "delete",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User id",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "user was deleted"
+          },
+          "404": {
+            "description": "no user has been found"
+          }
+        }
+      }
+    },
+    "/users/{name}/search": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "Get users by their name",
+        "description": "Searches in user names and returns one or more result according to inputed search key. Works as fulltext searching.",
+        "operationId": "search",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "User name",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUsers"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "GetUsers": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "name": {
+            "type": "string",
+            "example": "theUser"
+          },
+          "email": {
+            "type": "string",
+            "example": "theUser@email.com"
+          }
+        }
+      },
+      "AddUser": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "user"
+        }
+      },
+      "UpdateUserById": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          }
+        },
+        "xml": {
+          "name": "user"
+        }
+      }
+    }
+  }
+}

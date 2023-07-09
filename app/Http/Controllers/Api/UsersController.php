@@ -12,7 +12,14 @@ class UsersController extends Controller
     //get all the users
     public function getUsers()
     {
-        return User::all();
+        $result = User::select("id","name", "email")->get();
+
+        if( count($result) === 0) {
+            $result = "No users in database";
+            return response()->json($result, 404);
+        };
+
+        return response()->json($result, 200);
     }
 
     public function addUsers(Request $request) {
@@ -48,7 +55,7 @@ class UsersController extends Controller
             {
                 return response()->json($isValid->errors(), 400);
             } else {
-                return ["result"=>"user added successfully"];
+                return response()-json(["result"=>"user added successfully", "user" => $result], 201);
             };
         }
 
@@ -62,10 +69,18 @@ class UsersController extends Controller
 
     public function getUsersById($id)
     {
-        return User::select('name', 'email')
+        $result = User::select('name', 'email')
         ->where('id', '=', $id)
         ->get();
-            
+        
+        if (count($result) === 0) {
+            $result = "users doesnt exist";
+            return response()->json($result,404);
+        } else {        
+        return response()->json($result,200);
+        };
+        
+        
     }
 
     public function updateUsersById(Request $request, $id)

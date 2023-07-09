@@ -17,7 +17,7 @@ Rozhodl jsem se také udělat pro ukázku dvě řešení, kdy práce s daty v r�
 pro rychlou přípravu DTB použity ,,helpers,, v rámci Laravelu -> php artisan\
 Migrations\
 Seeders\
-[dump file zde:](assignment.sql)
+[dump file zde](assignment.sql)
 
 ## Packages
 
@@ -33,5 +33,8 @@ Pro API jsem si vystačil bez použití nějakého balíčku, i když jsem uvaž
 
 ## API
 
-[Controller](app/Http/Controllers/Api/UsersController.php)\
-obsahuje endpointy, které vrací požadované data z databáze
+[Controller](app/Http/Controllers/Api/UsersController.php) obsahuje endpointy, které vrací požadované data z databáze
+
+dokumentaci jsem se tvořil na základě Swagger vzoru v editoru yaml formátu, poté převedeno do json\
+[Open API Documentation](openapi.json)
+![Open API Documentation](images/swagger.png)

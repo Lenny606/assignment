@@ -10,14 +10,16 @@ App obsahuje základní features: registraci uživatele, také následný login,
 
 Prvně jsem plánoval pro front-end použít také React s nějakým hezčím stylingem, nicméně kvůli času jsem od toho záměru opustil, a tak řešení je pouze php + html a pár řádků css.
 
-Rozhodl jsem se také udělat pro ukázku dvě řešení, kdy práce s daty v rámci appky z pohledu uživatele je řešena v jednom controlleru a oddělené API v jiném controlleru, které jsou otevřené a lze se na ně napojit. CRUD operace testovány v POSTMANOVy.
+Rozhodl jsem se také udělat dvě ukázky, kdy práce s daty v rámci appky z pohledu uživatele je řešena v jednom controlleru.\
+Oddělené API v jiném controlleru, které jsou otevřené a lze se na ně napojit. CRUD operace testovány v POSTMANOVy.
 
 ## DTB
 
-pro rychlou přípravu DTB použity ,,helpers,, v rámci Laravelu -> php artisan\
+pro rychlou přípravu DTB použity ,,helpers,, v rámci Laravelu (php artisan)\
 Migrations\
 Seeders\
 [dump file zde](assignment.sql)
+![DTB](images/phpmyadmin.png)
 
 ## Packages
 
@@ -30,14 +32,6 @@ obsahuje základní validační metody pro každý input a hash passwordu\
 
 Sanctum pro authentifikaci, ale prakticky jsem ho ani nepoužil\
 Pro API jsem si vystačil bez použití nějakého balíčku, i když jsem uvažoval např. o Restify, ale to bych musel vzít více času nastudovat dokumentaci
-
-## API
-
-[Controller](app/Http/Controllers/Api/UsersController.php) obsahuje endpointy, které vrací požadované data z databáze
-
-dokumentaci jsem se tvořil na základě Swagger vzoru v editoru yaml formátu, poté převedeno do json\
-[Open API Documentation](openapi.json)
-![Open API Documentation](images/swagger.png)
 
 ## Docker
 
@@ -72,3 +66,16 @@ Každý záznam je možné dále upravit, což přesměruje na detail uživatele
 
 Nepřihlášený uživatel k informacím nemá přístup.\
 ![Auth](images/auth.png)
+
+## API
+
+[Controller](app/Http/Controllers/Api/UsersController.php) obsahuje endpointy, které vrací či edituje požadované data z databáze\
+
+Např. POST request\
+![post](images/post.png)
+
+Ne všechny statusy jsou ošetřeny
+
+dokumentaci jsem se tvořil na základě Swagger vzoru v yaml formátu ve swagger editoru, poté převedeno do json\
+[Open API Documentation](openapi.json)
+![Open API Documentation](images/swagger.png)

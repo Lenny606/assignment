@@ -28,7 +28,7 @@ class UsersController extends Controller
             $rules = array(
                 "id" => "integer",
                 "name" => "string|required|max:50",
-                "email" => "string",
+                "email" => "string|email",
                 "password" => "required",
             );
 

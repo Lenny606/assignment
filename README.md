@@ -1,16 +1,16 @@
 # Assignment
 
-K PHP jsem se vrátil v tomtu úkolu po delší době, musím přiznat, že jsem musel strávit nějakou chvíli, abych si oživil syntax a principy. Úplně nejsem s výsledkem spokojen, nicméně nelze to dělat měsíc :smile: , tudíž doufám, že to splňuje požadavky na MVP.
+K PHP jsem se v tomtu úkolu vrátil po delší době, cca po roce, a musím přiznat, že jsem musel strávit nějakou chvíli, abych si oživil syntax a principy. Úplně nejsem s výsledkem spokojen, nicméně nelze to dělat měsíc :smile: ... Osobně jsem si dal za target to poslat v pondělí, tudíž doufám, že to splňuje MVP požadavky v zadání.
 
 ## PHP framework - Laravel
 
-App jsem si nastavil na virtuální adrese: assigment.test a připojil dostupnou databázi phpMyAdmin (lokální Apache server přes XAMPP)
+App jsem si nastavil na virtuální adrese: hhtp://www.assigment.test a připojil dostupnou databázi phpMyAdmin (lokální Apache server přes XAMPP)
 
 App obsahuje základní features: registraci uživatele, také následný login, čtení z dat, mazání úživatelů
 
 Prvně jsem plánoval pro front-end použít také React s nějakým hezčím stylingem, nicméně kvůli času jsem od toho záměru opustil, a tak řešení je pouze php + html a pár řádků css.
 
-Rozhodl jsem se také udělat dvě ukázky, kdy práce s daty v rámci appky z pohledu uživatele je řešena v jednom controlleru.\
+Rozhodl jsem se také udělat dvě ukázky, kdy práce s daty v rámci z pohledu uživatele je řešena v jednom controlleru.\
 Oddělené API v jiném controlleru, které jsou otevřené a lze se na ně napojit. CRUD operace testovány v POSTMANOVy.
 
 ## DTB
@@ -23,21 +23,20 @@ Seeders\
 
 ## Packages
 
-Laravel už sam o sobě obsahuje množství balíčků, které usnaďnují standartní oparace a funkce, ale ne se všemi mám praktickou zkušenost
+Laravel už sam o sobě obsahuje množství balíčků, které usnaďnují standartní oparace a funkce, ale ne se všemi mám praktickou zkušenost.\
 
-### Fortify
+Pro založení/registraci nového uživatele použito Fortify\
+Obsahuje základní validační metody pro každý input a hash passwordu\
 
-pro snadné založení/registraci nového uživatele\
-obsahuje základní validační metody pro každý input a hash passwordu\
+Sanctum pro pokročilejší authentifikaci, ale prakticky jsem ho ani nepoužil\
 
-Sanctum pro authentifikaci, ale prakticky jsem ho ani nepoužil\
-Pro API jsem si vystačil bez použití nějakého balíčku, i když jsem uvažoval např. o Restify, ale to bych musel vzít více času nastudovat dokumentaci
+Pro API jsem si vystačil bez použití nějakého dalšího balíčku, i když jsem uvažoval např. o Restify, ale to bych si musel vzít více času pro nastudování dokumentace.
 
 ## Docker
 
 S Dockerem bohužel praktické zkušenosti nemám, doposud jsem s ním v práci nepřišel do kontaktu.\
 Nicméně vím, že je to důležitý skill a mám ho zařazen v mém backlogu na learning :smile:
-Již jsem zkoušel containerizaci na malé javascriptí appce , např [zde](https://github.com/Lenny606/dockerlesson), ale doposud nic většího, tudíž sem se do tohoto tasku nepouštěl.
+Již jsem zkoušel containerizaci na malé javascriptí appce , např [zde](https://github.com/Lenny606/dockerlesson), ale doposud nic většího, tudíž sem se do tohoto tasku ani nepouštěl.
 
 ## App
 
@@ -71,10 +70,11 @@ Nepřihlášený uživatel k informacím nemá přístup.\
 
 [Controller](app/Http/Controllers/Api/UsersController.php) obsahuje endpointy, které vrací či edituje požadované data z databáze\
 
-Např. POST request\
+Např. POST request, který má i nějakou základní validaci\
 ![post](images/post.png)
+![post not valid](images/not-valid-email.png)
 
-Ne všechny statusy jsou ošetřeny
+Ne všechny statusy jsou ovšem ošetřeny
 
 dokumentaci jsem se tvořil na základě Swagger vzoru v yaml formátu ve swagger editoru, poté převedeno do json\
 [Open API Documentation](openapi.json)

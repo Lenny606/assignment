@@ -49,26 +49,26 @@ Již jsem zkoušel containerizaci na malé javascriptí appce , např [zde](http
 
 Základní funkcionality, aby bylo možné vytvořit, upravit, načíst a smazat uživatele.
 
-Domovská stránka s navbarem, kde je možné se registrovat či přihlásit
+Domovská stránka s navbarem, kde je možné se registrovat či přihlásit.\
 ![Index](images/index.png)
 
-Registrace má základní validaci pro požadované hodnoty
+Registrace má základní validaci pro požadované hodnoty\
 ![Register with Error](images/register-error.png)
 ![Register](images/register.png)
 
 Po registraci přesměrováno zpět na homepage a uživatel je přihlášen.\
-Možnost logout v navbaru, zobrazí se také btn pro zobrazení seznamu uživatelů.
+Možnost logout v navbaru, zobrazí se také btn pro zobrazení seznamu uživatelů.\
 ![Homepage](images/home.png)
 
-Na stránce uživatelů je z databáze načten seznam s pár informacemi.
+Na stránce uživatelů je z databáze načten seznam s pár informacemi.\
 ![Users](images/users.png)
 
-Každý záznam je možné dále upravit, což přesměruje na detail uživatele...
+Každý záznam je možné dále upravit, což přesměruje na detail uživatele...\
 ![Edit](images/edit.png)
 ![Edited](images/edited.png)
 
-...nebo smazat.
+...nebo smazat.\
 ![Delete](images/deleted.png)
 
-Nepřihlášený uživatel k informacím nemá přístup
+Nepřihlášený uživatel k informacím nemá přístup.\
 ![Auth](images/auth.png)

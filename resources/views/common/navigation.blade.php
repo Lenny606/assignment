@@ -24,9 +24,7 @@
 
     @endforeach
 
-    @auth
-
-        
+    @auth        
 
         <form action="{{ route('logout') }}" method="post">
             @csrf
@@ -38,13 +36,7 @@
  
         <a><<<<=====</a>
 
-    @endauth 
-
-    {{-- @guest
-
-        <a href="{{ route('register') }}">Register here!</a>
-
-    @endguest --}}
+    @endauth    
 
     @can('admin')
         <a href="{{ route('admin.home') }}">Administration</a>

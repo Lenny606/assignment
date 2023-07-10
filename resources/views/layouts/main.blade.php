@@ -7,14 +7,10 @@
     <title>Document</title>
    @vite(['resources/js/script.js', 'resources/css/app.css'])
 
-    {{-- @yield('stylesheets')
-    @yield('scripts') --}}
 </head>
 <body>
 
-    @include('common/navigation', [
-        // 'current_page' => $current_page ?? null
-    ])
+    @include('common/navigation')
 
 {{-- async js function only for testing purposes in console--}}
 <script>

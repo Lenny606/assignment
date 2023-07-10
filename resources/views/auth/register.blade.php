@@ -33,5 +33,5 @@
         <br>        
         <input type="submit" value="Create User">
 </form>
-    {{-- <button onclick="getUsers()" id="btn">BTN</button> --}}
+  
 @endsection

@@ -32,6 +32,11 @@ input {
     margin: 0 20%;
 }
 
+ul {
+    padding: 5px;
+    margin: 0 20%;
+}
+
 input {
     background-color: lightgrey;
     border-color: lightgrey;

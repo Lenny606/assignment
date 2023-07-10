@@ -44,3 +44,21 @@ dokumentaci jsem se tvořil na základě Swagger vzoru v editoru yaml formátu, 
 S Dockerem bohužel praktické zkušenosti nemám, doposud jsem s ním v práci nepřišel do kontaktu.\
 Nicméně vím, že je to důležitý skill a mám ho zařazen v mém backlogu na learning :smile:
 Již jsem zkoušel containerizaci na malé javascriptí appce , např [zde](https://github.com/Lenny606/dockerlesson), ale doposud nic většího, tudíž sem se do tohoto tasku nepouštěl.
+
+## App
+
+Základní funkcinality, aby bylo možné vytvořit, upravit, načíst a smazat uživatele.
+
+Domovská stránka s navbarem, kde je možné se registrovat či přihlásit
+![Index](images/index.png)
+
+Registrace má základní validaci pro požadované hodnoty
+![Register with Error](images/register-error.png)
+![Register](images/register.png)
+
+Po registraci přesměrováno zpět na homepage a uživatel je přihlášen.
+Možnost logout v navbaru, zobrazí se také btn pro zobrazení seznamu uživatelů.
+![Homepage](images/homepage.png)
+
+Na stránce uživatelů je z databáze načten seznam s několika informacemi.
+Každý záznam je možné dále upravit, což přesměruje na detail uživatele, nebo smazat.
